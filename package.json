@@ -16,7 +16,8 @@
     "webpack-cli": "^5.0.0"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --config webpack.production.config.js",
+    "dev": "webpack --config webpack.dev.config.js"
   },
   "dependencies": {
     "handlebars": "^4.7.7"
