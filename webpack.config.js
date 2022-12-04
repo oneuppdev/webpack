@@ -50,6 +50,12 @@ module.exports = {
       filename: "styles.[contenthash].css",
     }),
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "Hello World",
+      filename: "index.html",
+      meta: {
+        description: "A Hello World Webpack generated file.",
+      },
+    }),
   ],
 };
