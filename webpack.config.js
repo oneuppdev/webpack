@@ -42,6 +42,10 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.hbs$/,
+        use: ["handlebars-loader"],
+      },
     ],
   },
   plugins: [
@@ -51,11 +55,10 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Hello World",
+      template: "src/index.hbs",
       filename: "index.html",
-      meta: {
-        description: "A Hello World Webpack generated file.",
-      },
+      title: "Porsche Cars",
+      description: "A Hello World Webpack generated file.",
     }),
   ],
 };
