@@ -14,9 +14,12 @@ module.exports = {
       writeToDisk: true,
     },
   },
-  entry: "./src/index.js",
+  entry: {
+    button: "./src/button.js",
+    image: "./src/image.js",
+  },
   output: {
-    filename: "bundle.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "./dist"),
     publicPath: "",
   },
@@ -59,10 +62,20 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      filename: "button.html",
+      chunks: ["button"],
       template: "src/index.hbs",
-      filename: "index.html",
+      title: "Button",
+      description: "Button",
+      minify: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: "image.html",
+      chunks: ["image"],
+      template: "src/index.hbs",
       title: "Porsche Cars",
       description: "A Hello World Webpack generated file.",
+      minify: false,
     }),
   ],
 };
