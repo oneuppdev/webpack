@@ -9,3 +9,5 @@ const helloWorldButton = new HelloWorldButton();
 helloWorldButton.render();
 
 addImage();
+
+console.log(`Runnign in ${process.env.NODE_ENV} mode`);
